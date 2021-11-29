@@ -1,5 +1,5 @@
 ---
-title: "MyLabJournal"
+title: "Customer_INsight_in_EV_Cars"
 output: html_document
 ---
 
