@@ -1,13 +1,20 @@
-name: "Customer_INsight_in_EV_Cars"
+name: "Jace"
 navbar:
-  title: "Customer_INsight_in_EV_Cars"
+  title: "EV-Cars Customer Analysis" # 左上角的section大名
   left:
     - text: "Home"
       href: index.html
     - text: "Journal"
       href: Journal.html
-    - text: "EV_Car_Customer_Insight.Rmd"
+    - text: "Report"
       href: EV_Car_Customer_Insight.html
     - text: "Links"
       href: Links.html
+      
+  right:
+    - icon: fab fa-github fa-lg
+      href: http://github.com/jace-yang
+    - icon: fab fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/jinhang-yang/
+      
 output_dir: "docs"
