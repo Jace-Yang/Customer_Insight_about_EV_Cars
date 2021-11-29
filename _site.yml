@@ -1,11 +1,13 @@
-name: "MyLabJournal"
+name: "Customer_INsight_in_EV_Cars"
 navbar:
-  title: "MyLabJournal"
+  title: "Customer_INsight_in_EV_Cars"
   left:
     - text: "Home"
       href: index.html
     - text: "Journal"
       href: Journal.html
+    - text: "EV_Car_Customer_Insight.Rmd"
+      href: EV_Car_Customer_Insight.html
     - text: "Links"
       href: Links.html
 output_dir: "docs"
