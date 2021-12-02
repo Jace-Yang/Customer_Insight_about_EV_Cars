@@ -1,2 +1,3 @@
 # Strategy Management Homework
-An R Markdown website template for a lab journal [https://crumplab.github.io/LabJournalWebsite/index.html](https://crumplab.github.io/LabJournalWebsite/index.html)
+
+Check out everything at [https://jace-yang.github.io/Customer_Insight_about_EV_Cars/)
