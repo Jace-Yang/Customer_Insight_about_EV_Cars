@@ -9,10 +9,6 @@
     max-width: 260px;
 }
 
-#logo_deloitte {
-	z-index: 999;
-}
-
 .main-container {
   max-width: 2300px !important;
   margin-left: auto;
@@ -20,11 +16,10 @@
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-    background-color: #1e1f21;
-    color: #6edb7e;
+    /* background-color: #1e1f21;
+     color: #6edb7e; */
     font-weight: bold;
 }
-
 
 .forceNetwork.html-widget.html-widget-static-bound {
     border-style:solid !important;

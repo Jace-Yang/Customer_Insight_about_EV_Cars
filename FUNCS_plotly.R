@@ -240,7 +240,7 @@ set_col <- function(df, colnames){
 
 
 #### 前端组件 ####
-get_DT <-function(df, rownames = F, pageLength = 5){
+get_DT <-function(df, rownames = F, default_show = 10){
   df %>%
     
     DT::datatable(
@@ -252,24 +252,19 @@ get_DT <-function(df, rownames = F, pageLength = 5){
       filter = 'top',
       options = list(autoWidth = T,
                      digits=2,
-                     pageLength = pageLength, # 默认的展开数
+                     pageLength = default_show,
                      dom = 'Blfrtip',
                      
-                     # 酷酷的黑色标题底
                      initComplete = JS(
                        "function(settings, json) {",
                        "$(this.api().table().header()).css({'background-color': '#ffffff', 'color': '#000000'});",
                        "}"),
                      
-                     # 调整界面语言为中文
-                     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'),
+                     # language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'),
                      
-                     # 支持模糊搜索
                      search = list(regex = TRUE, caseInsensitive = FALSE),
                      
-                     # 下载按钮
                      buttons = list(
-                       
                        list(
                          extend = 'collection',
                          buttons = c('csv', 'excel', 'pdf'),
@@ -286,10 +281,58 @@ get_DT <-function(df, rownames = F, pageLength = 5){
                          buttons = c('print'),
                          text = '打印')),
                      
-                     # 选择一页展示多少个数
                      lengthMenu = c(10, 25, 50, 200, 500)))  -> DTtable
   return(DTtable)
 }
+
+
+get_DT <-function(df, rownames = F, default_show = 10){
+  df %>%
+    
+    DT::datatable(
+      extensions = 'Buttons', 
+      class = 'display',
+      rownames = rownames,
+      editable = "cell",
+      filter = 'top',
+      options = list(autoWidth = T,
+                     digits=2,
+                     pageLength = default_show,
+                     dom = 'Blfrtip',
+                     columnDefs = 
+                       list(list(className = 'dt-center', 
+                                 targets = "_all")),
+                     initComplete = JS(
+                       "function(settings, json) {",
+                       "$(this.api().table().header()).css({'background-color': '#ffffff', 'color': '#000000'});",
+                       "}"),
+                     
+                     # language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'),
+                     
+                     search = list(regex = TRUE, caseInsensitive = FALSE),
+                     
+                     buttons = list(
+                       list(
+                         extend = 'collection',
+                         buttons = c('csv', 'excel', 'pdf'),
+                         text = '下载'),
+                       
+                       list(
+                         extend = 'copy',
+                         buttons = c('copy'),
+                         title = NULL, # 复制的时候不会有标题
+                         text = '复制'),
+                       
+                       list(
+                         extend = 'print',
+                         buttons = c('print'),
+                         text = '打印')),
+                     
+                     lengthMenu = c(10, 25, 50, 200, 500)))  -> DTtable
+  return(DTtable)
+}
+
+
 
 get_empty_note <- function(p_ori, note){
   

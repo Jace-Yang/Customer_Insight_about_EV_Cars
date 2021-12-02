@@ -1,20 +1,33 @@
 name: "Jace"
 navbar:
-  title: "EV-Cars Customer Analysis" # 左上角的section大名
+  title: "EV Cars Customer Analysis" # 左上角的section大名
   left:
-    - text: "Home"
+    - text: "首页"
       href: index.html
-    - text: "Journal"
-      href: Journal.html
-    - text: "Report"
-      href: EV_Car_Customer_Insight.html
-    - text: "Links"
-      href: Links.html
-      
+    - text: "数据来源"
+      href: data_source.html
+    - text: "分析报告"
+      href: report.html
+    
   right:
     - icon: fab fa-github fa-lg
       href: http://github.com/jace-yang
     - icon: fab fa-linkedin fa-lg
       href: https://www.linkedin.com/in/jinhang-yang/
-      
 output_dir: "docs"
+output:
+  html_document:
+    theme: flatly
+    css: 'main_page.css'
+# 包里面的格式
+# output:
+#   prettydoc::html_pretty:
+#     theme: cayman
+#     highlight: github
+# output:
+#   rmdformats::readthedown:
+#     self_contained: true
+#     thumbnails: true
+#     lightbox: true
+#     gallery: false
+#     highlight: tango
